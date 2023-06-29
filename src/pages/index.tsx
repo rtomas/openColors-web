@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { rgbToHex } from "../utils/colors";
 import ColorRow from "@/components/colorRow";
+import ConnectWallet from "@/components/wallet";
 import { useOpenColorsContract } from "@/hooks/useOpenColorsContract";
 
 import metadata from "@/contract/open_colors.json";

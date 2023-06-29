@@ -1,0 +1,657 @@
+{
+    "source": {
+        "hash": "0x28d67fcbc21451d2905e10036238ba35f1d5a8f3642f665f1ab89b56d0b2449e",
+        "language": "ink! 4.2.1",
+        "compiler": "rustc 1.69.0",
+        "build_info": {
+            "build_mode": "Release",
+            "cargo_contract_version": "3.0.1",
+            "rust_toolchain": "stable-aarch64-apple-darwin",
+            "wasm_opt_settings": {
+                "keep_debug_symbols": false,
+                "optimization_passes": "Z"
+            }
+        }
+    },
+    "contract": {
+        "name": "open_colors",
+        "version": "0.1.0",
+        "authors": ["[your_name] <[your_email]>"]
+    },
+    "spec": {
+        "constructors": [
+            {
+                "args": [
+                    {
+                        "label": "initial_colors",
+                        "type": {
+                            "displayName": ["Vec"],
+                            "type": 0
+                        }
+                    }
+                ],
+                "default": false,
+                "docs": ["Constructor that initializes the `bool` value to the given `init_value`."],
+                "label": "new",
+                "payable": false,
+                "returnType": {
+                    "displayName": ["ink_primitives", "ConstructorResult"],
+                    "type": 6
+                },
+                "selector": "0x9bae9d5e"
+            },
+            {
+                "args": [],
+                "default": false,
+                "docs": ["Constructors with no colors"],
+                "label": "default",
+                "payable": false,
+                "returnType": {
+                    "displayName": ["ink_primitives", "ConstructorResult"],
+                    "type": 6
+                },
+                "selector": "0xed4b9d1b"
+            }
+        ],
+        "docs": [],
+        "environment": {
+            "accountId": {
+                "displayName": ["AccountId"],
+                "type": 4
+            },
+            "balance": {
+                "displayName": ["Balance"],
+                "type": 15
+            },
+            "blockNumber": {
+                "displayName": ["BlockNumber"],
+                "type": 3
+            },
+            "chainExtension": {
+                "displayName": ["ChainExtension"],
+                "type": 18
+            },
+            "hash": {
+                "displayName": ["Hash"],
+                "type": 16
+            },
+            "maxEventTopics": 4,
+            "timestamp": {
+                "displayName": ["Timestamp"],
+                "type": 17
+            }
+        },
+        "events": [],
+        "lang_error": {
+            "displayName": ["ink", "LangError"],
+            "type": 8
+        },
+        "messages": [
+            {
+                "args": [],
+                "default": false,
+                "docs": [],
+                "label": "clear_colors",
+                "mutates": true,
+                "payable": false,
+                "returnType": {
+                    "displayName": ["ink", "MessageResult"],
+                    "type": 9
+                },
+                "selector": "0x81c311d4"
+            },
+            {
+                "args": [
+                    {
+                        "label": "color",
+                        "type": {
+                            "displayName": ["Color"],
+                            "type": 1
+                        }
+                    }
+                ],
+                "default": false,
+                "docs": [],
+                "label": "add_color",
+                "mutates": true,
+                "payable": false,
+                "returnType": {
+                    "displayName": ["ink", "MessageResult"],
+                    "type": 6
+                },
+                "selector": "0x72768054"
+            },
+            {
+                "args": [],
+                "default": false,
+                "docs": [],
+                "label": "get_last_color",
+                "mutates": true,
+                "payable": false,
+                "returnType": {
+                    "displayName": ["ink", "MessageResult"],
+                    "type": 12
+                },
+                "selector": "0xd1aaf90d"
+            },
+            {
+                "args": [],
+                "default": false,
+                "docs": [],
+                "label": "get_colors_list",
+                "mutates": true,
+                "payable": false,
+                "returnType": {
+                    "displayName": ["ink", "MessageResult"],
+                    "type": 14
+                },
+                "selector": "0x9e8f05c7"
+            }
+        ]
+    },
+    "storage": {
+        "root": {
+            "layout": {
+                "struct": {
+                    "fields": [
+                        {
+                            "layout": {
+                                "leaf": {
+                                    "key": "0x00000000",
+                                    "ty": 0
+                                }
+                            },
+                            "name": "colors_list"
+                        },
+                        {
+                            "layout": {
+                                "enum": {
+                                    "dispatchKey": "0x00000000",
+                                    "name": "Option",
+                                    "variants": {
+                                        "0": {
+                                            "fields": [],
+                                            "name": "None"
+                                        },
+                                        "1": {
+                                            "fields": [
+                                                {
+                                                    "layout": {
+                                                        "struct": {
+                                                            "fields": [
+                                                                {
+                                                                    "layout": {
+                                                                        "leaf": {
+                                                                            "key": "0x00000000",
+                                                                            "ty": 2
+                                                                        }
+                                                                    },
+                                                                    "name": "r"
+                                                                },
+                                                                {
+                                                                    "layout": {
+                                                                        "leaf": {
+                                                                            "key": "0x00000000",
+                                                                            "ty": 2
+                                                                        }
+                                                                    },
+                                                                    "name": "g"
+                                                                },
+                                                                {
+                                                                    "layout": {
+                                                                        "leaf": {
+                                                                            "key": "0x00000000",
+                                                                            "ty": 2
+                                                                        }
+                                                                    },
+                                                                    "name": "b"
+                                                                }
+                                                            ],
+                                                            "name": "Color"
+                                                        }
+                                                    },
+                                                    "name": "0"
+                                                }
+                                            ],
+                                            "name": "Some"
+                                        }
+                                    }
+                                }
+                            },
+                            "name": "last_color"
+                        },
+                        {
+                            "layout": {
+                                "root": {
+                                    "layout": {
+                                        "leaf": {
+                                            "key": "0xe97c5bc1",
+                                            "ty": 3
+                                        }
+                                    },
+                                    "root_key": "0xe97c5bc1"
+                                }
+                            },
+                            "name": "colors_added_per_user"
+                        },
+                        {
+                            "layout": {
+                                "leaf": {
+                                    "key": "0x00000000",
+                                    "ty": 3
+                                }
+                            },
+                            "name": "total_colors_added"
+                        },
+                        {
+                            "layout": {
+                                "leaf": {
+                                    "key": "0x00000000",
+                                    "ty": 4
+                                }
+                            },
+                            "name": "owner"
+                        }
+                    ],
+                    "name": "OpenColors"
+                }
+            },
+            "root_key": "0x00000000"
+        }
+    },
+    "types": [
+        {
+            "id": 0,
+            "type": {
+                "def": {
+                    "sequence": {
+                        "type": 1
+                    }
+                }
+            }
+        },
+        {
+            "id": 1,
+            "type": {
+                "def": {
+                    "composite": {
+                        "fields": [
+                            {
+                                "name": "r",
+                                "type": 2,
+                                "typeName": "u8"
+                            },
+                            {
+                                "name": "g",
+                                "type": 2,
+                                "typeName": "u8"
+                            },
+                            {
+                                "name": "b",
+                                "type": 2,
+                                "typeName": "u8"
+                            }
+                        ]
+                    }
+                },
+                "path": ["open_colors", "open_colors", "Color"]
+            }
+        },
+        {
+            "id": 2,
+            "type": {
+                "def": {
+                    "primitive": "u8"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "type": {
+                "def": {
+                    "primitive": "u32"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "type": {
+                "def": {
+                    "composite": {
+                        "fields": [
+                            {
+                                "type": 5,
+                                "typeName": "[u8; 32]"
+                            }
+                        ]
+                    }
+                },
+                "path": ["ink_primitives", "types", "AccountId"]
+            }
+        },
+        {
+            "id": 5,
+            "type": {
+                "def": {
+                    "array": {
+                        "len": 32,
+                        "type": 2
+                    }
+                }
+            }
+        },
+        {
+            "id": 6,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "fields": [
+                                    {
+                                        "type": 7
+                                    }
+                                ],
+                                "index": 0,
+                                "name": "Ok"
+                            },
+                            {
+                                "fields": [
+                                    {
+                                        "type": 8
+                                    }
+                                ],
+                                "index": 1,
+                                "name": "Err"
+                            }
+                        ]
+                    }
+                },
+                "params": [
+                    {
+                        "name": "T",
+                        "type": 7
+                    },
+                    {
+                        "name": "E",
+                        "type": 8
+                    }
+                ],
+                "path": ["Result"]
+            }
+        },
+        {
+            "id": 7,
+            "type": {
+                "def": {
+                    "tuple": []
+                }
+            }
+        },
+        {
+            "id": 8,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "index": 1,
+                                "name": "CouldNotReadInput"
+                            }
+                        ]
+                    }
+                },
+                "path": ["ink_primitives", "LangError"]
+            }
+        },
+        {
+            "id": 9,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "fields": [
+                                    {
+                                        "type": 10
+                                    }
+                                ],
+                                "index": 0,
+                                "name": "Ok"
+                            },
+                            {
+                                "fields": [
+                                    {
+                                        "type": 8
+                                    }
+                                ],
+                                "index": 1,
+                                "name": "Err"
+                            }
+                        ]
+                    }
+                },
+                "params": [
+                    {
+                        "name": "T",
+                        "type": 10
+                    },
+                    {
+                        "name": "E",
+                        "type": 8
+                    }
+                ],
+                "path": ["Result"]
+            }
+        },
+        {
+            "id": 10,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "fields": [
+                                    {
+                                        "type": 7
+                                    }
+                                ],
+                                "index": 0,
+                                "name": "Ok"
+                            },
+                            {
+                                "fields": [
+                                    {
+                                        "type": 11
+                                    }
+                                ],
+                                "index": 1,
+                                "name": "Err"
+                            }
+                        ]
+                    }
+                },
+                "params": [
+                    {
+                        "name": "T",
+                        "type": 7
+                    },
+                    {
+                        "name": "E",
+                        "type": 11
+                    }
+                ],
+                "path": ["Result"]
+            }
+        },
+        {
+            "id": 11,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "index": 0,
+                                "name": "NotOwner"
+                            }
+                        ]
+                    }
+                },
+                "path": ["open_colors", "open_colors", "Error"]
+            }
+        },
+        {
+            "id": 12,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "fields": [
+                                    {
+                                        "type": 13
+                                    }
+                                ],
+                                "index": 0,
+                                "name": "Ok"
+                            },
+                            {
+                                "fields": [
+                                    {
+                                        "type": 8
+                                    }
+                                ],
+                                "index": 1,
+                                "name": "Err"
+                            }
+                        ]
+                    }
+                },
+                "params": [
+                    {
+                        "name": "T",
+                        "type": 13
+                    },
+                    {
+                        "name": "E",
+                        "type": 8
+                    }
+                ],
+                "path": ["Result"]
+            }
+        },
+        {
+            "id": 13,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "index": 0,
+                                "name": "None"
+                            },
+                            {
+                                "fields": [
+                                    {
+                                        "type": 1
+                                    }
+                                ],
+                                "index": 1,
+                                "name": "Some"
+                            }
+                        ]
+                    }
+                },
+                "params": [
+                    {
+                        "name": "T",
+                        "type": 1
+                    }
+                ],
+                "path": ["Option"]
+            }
+        },
+        {
+            "id": 14,
+            "type": {
+                "def": {
+                    "variant": {
+                        "variants": [
+                            {
+                                "fields": [
+                                    {
+                                        "type": 0
+                                    }
+                                ],
+                                "index": 0,
+                                "name": "Ok"
+                            },
+                            {
+                                "fields": [
+                                    {
+                                        "type": 8
+                                    }
+                                ],
+                                "index": 1,
+                                "name": "Err"
+                            }
+                        ]
+                    }
+                },
+                "params": [
+                    {
+                        "name": "T",
+                        "type": 0
+                    },
+                    {
+                        "name": "E",
+                        "type": 8
+                    }
+                ],
+                "path": ["Result"]
+            }
+        },
+        {
+            "id": 15,
+            "type": {
+                "def": {
+                    "primitive": "u128"
+                }
+            }
+        },
+        {
+            "id": 16,
+            "type": {
+                "def": {
+                    "composite": {
+                        "fields": [
+                            {
+                                "type": 5,
+                                "typeName": "[u8; 32]"
+                            }
+                        ]
+                    }
+                },
+                "path": ["ink_primitives", "types", "Hash"]
+            }
+        },
+        {
+            "id": 17,
+            "type": {
+                "def": {
+                    "primitive": "u64"
+                }
+            }
+        },
+        {
+            "id": 18,
+            "type": {
+                "def": {
+                    "variant": {}
+                },
+                "path": ["ink_env", "types", "NoChainExtension"]
+            }
+        }
+    ],
+    "version": "4"
+}

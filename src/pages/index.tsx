@@ -13,7 +13,7 @@ export default function Home() {
     }, []); */
 
     useEffect(() => {
-        console.log(colorList);
+        //console.log(colorList);
     }, [colorList]);
 
     return (

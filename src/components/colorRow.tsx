@@ -6,8 +6,12 @@ interface RowProps {
 }
 
 const ColorRow = ({ color1, color2 }: RowProps) => {
+    // make a gradient with the two colors
+    const gradientStyle = {
+        background: `linear-gradient(${color1}, ${color2})`,
+    };
     return (
-        <div className={`w-full flex items-center justify-center h-24 bg-gradient-to-b from-[${color1}] to-[${color2 === undefined ? color1 : color2}]`}>
+        <div style={gradientStyle} className="w-full flex items-center justify-center h-24">
             {color1}
         </div>
     );

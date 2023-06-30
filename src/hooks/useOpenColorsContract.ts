@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useCall, useDryRun, useContract } from "useink";
 import { pickDecoded } from "useink/utils";
+import { rgbToHex } from "@/utils/colors";
 
 import metadata from "@/contract/open_colors.json";
 
 interface Color {
-    r: number;
+    r: u16;
     g: number;
     b: number;
 }
@@ -14,9 +15,10 @@ export function useOpenColorsContract() {
     const _contract = useContract("5EiMDgeApcbGXMEDof4nmAj9VSnbomy67pBZKfWVbsoguMuk", metadata); // TODO: .ENV
 
     const [colorList, setColorList] = useState<string[]>([]);
+    const [lastColor, setLastColor] = useState<string>("");
     const [loading, setLoading] = useState<"loading" | "done" | "error">("loading");
 
-    const getColorsList = useDryRun<any>(_contract, "getColorsList");
+    const getColorsList = useDryRun<Color[]>(_contract, "getColorsList");
     const getLastColor = useDryRun<Color>(_contract, "getLastColor");
 
     useEffect(() => {
@@ -28,17 +30,26 @@ export function useOpenColorsContract() {
 
     useEffect(() => {
         if (getLastColor.result) {
-            console.log("getLastColor.ok", pickDecoded(getLastColor.result));
+            let lastColorObj = pickDecoded(getLastColor.result);
+            if (lastColorObj) {
+                setLastColor(rgbToHex(lastColorObj.r, lastColorObj.g, lastColorObj.b));
+            }
         }
     }, [getLastColor.result]);
 
     useEffect(() => {
         if (getColorsList.result) {
-            console.log("getColorsList.ok", pickDecoded(getColorsList.result));
+            let colorsList = pickDecoded(getColorsList.result);
+            // transform all colors to hex strign with rgbToHex
+            if (colorsList) {
+                let data = colorsList.map((color: Color) => rgbToHex(Math.floor(color.r), Math.floor(color.g), Math.floor(color.b)));
+                setColorList(data);
+            }
         }
     }, [getColorsList.result]);
 
     return {
+        lastColor,
         colorList,
         loading,
     };

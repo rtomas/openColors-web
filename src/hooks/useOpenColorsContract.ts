@@ -6,7 +6,7 @@ import { rgbToHex } from "@/utils/colors";
 import metadata from "@/contract/open_colors.json";
 
 interface Color {
-    r: u16;
+    r: number;
     g: number;
     b: number;
 }
@@ -39,6 +39,7 @@ export function useOpenColorsContract() {
 
     useEffect(() => {
         if (getColorsList.result) {
+            setLoading("done");
             let colorsList = pickDecoded(getColorsList.result);
             // transform all colors to hex strign with rgbToHex
             if (colorsList) {

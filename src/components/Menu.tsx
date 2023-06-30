@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { BiRightArrowAlt, BiLeftArrowAlt } from "react-icons/bi";
-import ConnectWallet from "./ConnectWallet";
-import { useWallet } from "useink";
-import AddColor from "./AddColor";
-import LastestColors from "./LastestColors";
+import React, { useState } from 'react';
+import { BiRightArrowAlt, BiLeftArrowAlt } from 'react-icons/bi';
+import ConnectWallet from './ConnectWallet';
+import { useWallet } from 'useink';
+import AddColor from './AddColor';
+import LastestColors from './LastestColors';
 
 const Menu = () => {
   const { account } = useWallet();
@@ -20,9 +20,26 @@ const Menu = () => {
           <BiLeftArrowAlt />
         </button>
       </div>
+      <div className="text-center">Open Dream Colors</div>
       <ConnectWallet />
       {account && <AddColor />}
-      <LastestColors />
+      <div>
+        <p>Links:</p>
+        <p>
+          *{' '}
+          <a target="_blank" href="https://github.com/rtomas/openColors-web">
+            Github web
+          </a>
+        </p>
+        <p>
+          *{' '}
+          <a target="_blank" href="https://github.com/rtomas/openColors">
+            Github Smart Contract
+          </a>
+        </p>
+        <br />
+        <div className="text-center">WIP by Tomás Rawski</div>
+      </div>
     </div>
   ) : (
     <div className="absolute w-[100px] border-white text-white flex py-4">

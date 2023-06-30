@@ -37,6 +37,18 @@ const Menu = () => {
             Github Smart Contract
           </a>
         </p>
+        <p>
+          *{' '}
+          <a target="_blank" href="https://www.subwallet.app/download.html">
+            Install subwallet extension to interact
+          </a>
+        </p>
+        <p>
+          *{' '}
+          <a target="_blank" href="https://use.ink/faucet/">
+            Ask for Roc tokens
+          </a>
+        </p>
         <br />
         <div className="text-center">WIP by Tomás Rawski</div>
       </div>

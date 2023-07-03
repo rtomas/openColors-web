@@ -25,8 +25,8 @@ const Menu = () => {
       {account && <AddColor />}
       <div>
         <p>
-          3 tutorials in progress: <br />+ How to use the app with a wallet and ROCs <br />+ Explain the smart contract
-          in ink! <br />+ Explain the UI with next.js & useink library <br />
+          Tutorials (soon !): <br />+ How to use the app with a wallet and ROCs <br />+ Explain the smart contract in
+          ink! <br />+ Explain the UI with next.js & useink library <br />
           <br />
         </p>
         <p>Links:</p>

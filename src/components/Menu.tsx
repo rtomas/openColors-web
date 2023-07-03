@@ -25,8 +25,15 @@ const Menu = () => {
       {account && <AddColor />}
       <div>
         <p>
-          Tutorials (soon !): <br />+ How to use the app with a wallet and ROCs <br />+ Explain the smart contract in
-          ink! <br />+ Explain the UI with next.js & useink library <br />
+          Tutorials: <br />+{' '}
+          <a
+            href="https://rtomas.hashnode.dev/how-to-use-the-open-dream-colors-art-app-with-your-own-wallet-and-ask-for-rocs"
+            target="_blank"
+          >
+            A beginner&apos;s guide to interacting with the App Art!
+          </a>
+          <br />+ Explain the smart contract in ink! (soon !)
+          <br />+ Explain the UI with next.js & useink library (soon !) <br />
           <br />
         </p>
         <p>Links:</p>

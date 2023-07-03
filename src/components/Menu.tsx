@@ -29,6 +29,7 @@ const Menu = () => {
           <a
             href="https://rtomas.hashnode.dev/how-to-use-the-open-dream-colors-art-app-with-your-own-wallet-and-ask-for-rocs"
             target="_blank"
+            className="underline"
           >
             A beginner&apos;s guide to interacting with the App Art!
           </a>
@@ -39,25 +40,25 @@ const Menu = () => {
         <p>Links:</p>
         <p>
           *{' '}
-          <a target="_blank" href="https://github.com/rtomas/openColors-web">
+          <a target="_blank" href="https://github.com/rtomas/openColors-web" className="underline">
             UI Github
           </a>
         </p>
         <p>
           *{' '}
-          <a target="_blank" href="https://github.com/rtomas/openColors">
+          <a target="_blank" href="https://github.com/rtomas/openColors" className="underline">
             Smart Contract Github
           </a>
         </p>
         <p>
           *{' '}
-          <a target="_blank" href="https://www.subwallet.app/download.html">
+          <a target="_blank" href="https://www.subwallet.app/download.html" className="underline">
             Install subwallet extension to interact
           </a>
         </p>
         <p>
           *{' '}
-          <a target="_blank" href="https://use.ink/faucet/">
+          <a target="_blank" href="https://use.ink/faucet/" className="underline">
             Ask for Roc tokens
           </a>
         </p>

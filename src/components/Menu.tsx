@@ -37,6 +37,18 @@ const Menu = () => {
           <br />+ Explain the UI with next.js & useink library (soon !) <br />
           <br />
         </p>
+        <p>
+          Tutorial en Español: <br />+{' '}
+          <a
+            href="https://rtomas.hashnode.dev/como-usar-la-obra-open-dream-colors-el-color-de-tus-suenos-con-tu-propia-billetera-virtual-y-pedir-por-los-tokens-rocs"
+            target="_blank"
+            className="underline"
+          >
+            ¿Cómo instalar tu propia billetera virtual, pedir ROCs y usar la obra?
+          </a>
+          <br />
+          <br />
+        </p>
         <p>Links:</p>
         <p>
           *{' '}

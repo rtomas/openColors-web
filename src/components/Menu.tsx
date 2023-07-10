@@ -33,7 +33,10 @@ const Menu = () => {
           >
             A beginner&apos;s guide to interacting with the App Art!
           </a>
-          <br />+ Explain the smart contract in ink! (soon !)
+          <br />+{' '}
+          <a className="underline" href="https://rtomas.hashnode.dev/create-a-smart-contract-in-ink" target="_blank">
+            Explain smart contracts in ink!
+          </a>
           <br />+ Explain the UI with next.js & useink library (soon !) <br />
           <br />
         </p>

@@ -34,9 +34,9 @@ export const ConnectWallet = () => {
           </div>
           {showAccounts && <hr />}
           {showAccounts &&
-            accounts?.map((a) => (
+            accounts?.map((a, index) => (
               <button
-                key={a}
+                key={index}
                 className="rounded p-1 text-left hover:bg-gray-700 transition duration-200"
                 onClick={() => setAccount(a)}
               >

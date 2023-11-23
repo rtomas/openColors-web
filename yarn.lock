@@ -1684,7 +1684,12 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nanoid@3, nanoid@^3.3.4, nanoid@^3.3.6:
+nanoid@3:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
+  integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
+
+nanoid@^3.3.4, nanoid@^3.3.6:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
   integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
@@ -2462,9 +2467,9 @@ uri-js@^4.2.2:
     punycode "^2.1.0"
 
 useink@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/useink/-/useink-1.10.0.tgz#136a4c44d3e38e9e388984b559f946e744980165"
-  integrity sha512-LgJ0Ssf34rOAe0BkxgMp+MPcMLK3ZeydSKpgr0V8Dw0XMb6bMkUbBdF4z+JkaZ/PwI/Ss8t+yxaou1x5CoOF6g==
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/useink/-/useink-1.14.1.tgz#964605a71878c648b85f3e9be57c1a9085845b14"
+  integrity sha512-ecCwowOaBUmeIiEmTHw84SD3mM07CafWqGyXIOGEkX/19klC/pCAdDDHP2IM1yPlCTbNVDiWd564SqAu33tDPQ==
   dependencies:
     nanoid "3"
 

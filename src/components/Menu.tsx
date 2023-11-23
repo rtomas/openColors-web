@@ -82,18 +82,14 @@ const Menu = () => {
       </div>
     </div>
   ) : (
-    <div className="absolute w-[100px] border-white text-white flex py-4">
-      <div className="mx-auto">
-        <button
-          className="p-1 border border-white text-white rounded-full backdrop-blur-2xl text-xl"
-          onClick={() => {
-            setShowMenu(true);
-          }}
-        >
-          <BiRightArrowAlt />
-        </button>
-      </div>
-    </div>
+    <button
+      className="absolute top-0 left-0 m-5 p-2 border border-white text-white rounded-full backdrop-blur-2xl text-xl"
+      onClick={() => {
+        setShowMenu(true);
+      }}
+    >
+      <BiRightArrowAlt />
+    </button>
   );
 };
 

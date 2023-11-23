@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface RowProps {
   color1: string;
@@ -11,10 +11,7 @@ const ColorRow = ({ color1, color2 }: RowProps) => {
     background: `linear-gradient(${color1}, ${color2 || color1})`,
   };
   return (
-    <div
-      style={gradientStyle}
-      className="w-full flex items-center justify-center h-24"
-    >
+    <div style={gradientStyle} className="w-full flex items-center justify-center h-24 text-white">
       {color1}
     </div>
   );
